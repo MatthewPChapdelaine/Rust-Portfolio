@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Metaverse Seed
+Comment=Self-evolving ethical Metaverse OS core – Digimon mythos
+Exec=gnome-terminal -- metaverse_seed || x-terminal-emulator -e metaverse_seed || xterm -e metaverse_seed
+Icon=metaverse_seed
+Terminal=false
+Type=Application
+Categories=Utility;Development;
+StartupNotify=true

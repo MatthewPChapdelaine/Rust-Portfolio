@@ -1,0 +1,8 @@
+name = "actix-web"
+version = "4.4.0"
+authors = ["Actix Team"]
+description = "Actix Web is a powerful, pragmatic, and fast web framework"
+
+[dependencies]
+tokio = "^1.0"
+serde = "^1.0"

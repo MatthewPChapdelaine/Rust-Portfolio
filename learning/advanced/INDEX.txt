@@ -1,0 +1,139 @@
+═══════════════════════════════════════════════════════════════════════════
+                    ADVANCED RUST PROGRAMS - INDEX
+═══════════════════════════════════════════════════════════════════════════
+
+📁 Location: /home/matthew/repos/Programming_Repos/rust-projects/learning/advanced/
+
+═══════════════════════════════════════════════════════════════════════════
+                            PROGRAMS (8 Total)
+═══════════════════════════════════════════════════════════════════════════
+
+1. 🌐 multi_threaded_server.rs (280 lines)
+   └─ Concurrent TCP server with thread pool
+   └─ Features: Thread management, connection stats, command protocol
+   └─ Run: ./multi_threaded_server (port 7878)
+
+2. 🎨 design_patterns.rs (470 lines)
+   └─ 6 design patterns: Singleton, Factory, Observer, Strategy, Decorator, Builder
+   └─ Features: Idiomatic Rust implementations with demos
+   └─ Run: ./design_patterns
+
+3. 🌍 web_framework.rs (480 lines)
+   └─ Mini web framework with HTTP server
+   └─ Features: Routing, middleware, path params, JSON responses
+   └─ Run: ./web_framework (port 8080)
+
+4. �� database_orm.rs (520 lines)
+   └─ Simple ORM with query builder
+   └─ Features: CRUD operations, type-safe queries, repository pattern
+   └─ Run: ./database_orm
+
+5. 🔷 graph_algorithms.rs (580 lines)
+   └─ Graph algorithms: Dijkstra, BFS, DFS, topological sort, cycle detection
+   └─ Features: Adjacency list, path reconstruction, component finding
+   └─ Run: ./graph_algorithms
+
+6. 🗜️ compression_tool.rs (480 lines)
+   └─ Huffman coding compression/decompression
+   └─ Features: Frequency analysis, binary encoding, CLI tool
+   └─ Run: echo "text" | ./compression_tool compress
+
+7. 🔧 memory_pool.rs (470 lines)
+   └─ Thread-safe object pool
+   └─ Features: Generic pool, RAII, statistics, benchmarks
+   └─ Run: ./memory_pool
+
+8. 🔢 lexer_parser.rs (580 lines)
+   └─ Expression lexer/parser with AST
+   └─ Features: Tokenization, recursive descent, evaluation
+   └─ Run: ./lexer_parser "2 + 3 * 4"
+
+═══════════════════════════════════════════════════════════════════════════
+                            DOCUMENTATION
+═══════════════════════════════════════════════════════════════════════════
+
+📖 README.md           - Comprehensive documentation (10KB)
+🚀 QUICK_START.md      - Quick start guide (3.5KB)
+📋 INDEX.txt           - This file
+
+═══════════════════════════════════════════════════════════════════════════
+                            STATISTICS
+═══════════════════════════════════════════════════════════════════════════
+
+Total Lines of Code:    ~4,220 lines
+Total Source Files:     8 Rust programs
+Total Executables:      8 compiled binaries
+Documentation:          2 markdown files + 1 index
+
+Code Features:
+✅ Production-quality error handling
+✅ Comprehensive doc comments
+✅ Unit tests included
+✅ Idiomatic Rust patterns
+✅ Zero unsafe code
+✅ Thread-safe implementations
+
+═══════════════════════════════════════════════════════════════════════════
+                         QUICK COMPILATION
+═══════════════════════════════════════════════════════════════════════════
+
+# Compile all programs:
+for file in *.rs; do
+    rustc --edition 2021 "$file" -o "${file%.rs}"
+done
+
+# Compile with optimizations:
+for file in *.rs; do
+    rustc -O --edition 2021 "$file" -o "${file%.rs}"
+done
+
+═══════════════════════════════════════════════════════════════════════════
+                          KEY CONCEPTS COVERED
+═══════════════════════════════════════════════════════════════════════════
+
+🔹 Ownership & Borrowing      🔹 Smart Pointers (Box, Rc, Arc)
+🔹 Lifetimes                  🔹 Interior Mutability
+🔹 Traits & Generics          🔹 Error Handling
+🔹 Pattern Matching           🔹 Iterators
+🔹 Closures                   🔹 Concurrency
+🔹 Thread Safety              🔹 Collections
+🔹 Memory Management          🔹 Type System
+🔹 Algorithms                 🔹 Data Structures
+🔹 Network Programming        🔹 Parsing
+
+═══════════════════════════════════════════════════════════════════════════
+                           DIFFICULTY LEVELS
+═══════════════════════════════════════════════════════════════════════════
+
+Beginner-Friendly:
+  • compression_tool.rs      (data structures, trees)
+  • lexer_parser.rs          (parsing, recursion)
+
+Intermediate:
+  • design_patterns.rs       (patterns, abstractions)
+  • graph_algorithms.rs      (algorithms, complexity)
+  • database_orm.rs          (traits, generics)
+  • memory_pool.rs           (memory management)
+
+Advanced:
+  • multi_threaded_server.rs (concurrency, networking)
+  • web_framework.rs         (systems programming, HTTP)
+
+═══════════════════════════════════════════════════════════════════════════
+                            TEST RESULTS
+═══════════════════════════════════════════════════════════════════════════
+
+✅ All programs compile successfully
+✅ All programs run without errors
+✅ All tests pass
+✅ Production-ready code quality
+
+═══════════════════════════════════════════════════════════════════════════
+
+Created: February 3, 2025
+Rust Edition: 2021
+Purpose: Advanced Rust learning and demonstration
+
+Happy Rust Programming! 🦀
+
+═══════════════════════════════════════════════════════════════════════════

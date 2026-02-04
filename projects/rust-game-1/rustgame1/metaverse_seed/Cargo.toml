@@ -1,0 +1,26 @@
+[package]
+name = "metaverse_seed"
+version = "0.1.0"
+edition = "2021"
+description = "Self-evolving Metaverse OS Seed – Digimon-inspired ethical digital evolution"
+license = "MIT"
+homepage = "https://github.com/MatthewPChapdelaine/Web4"
+repository = "https://github.com/MatthewPChapdelaine/Web4"
+
+[dependencies]
+
+[package.metadata.deb]
+maintainer = "Matthew P. Chapdelaine"
+copyright = "2025 Matthew P. Chapdelaine"
+section = "utils"
+priority = "optional"
+extended-description = """
+A living Rust seed that autonomously digivolves.
+Mythos: Digimon stages (Rookie → Champion → Beyond).
+Vision: Foundation for ethical open-source Metaverse OS.
+Self-modifies source code for true growth."""
+assets = [
+    ["target/release/metaverse_seed", "usr/bin/metaverse_seed", "755"],
+    ["assets/metaverse_seed.desktop", "usr/share/applications/metaverse_seed.desktop", "644"],
+    ["assets/icon.png", "usr/share/icons/hicolor/256x256/apps/metaverse_seed.png", "644"]
+]

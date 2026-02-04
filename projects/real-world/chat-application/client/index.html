@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>🦀 Rust Chat</h2>
+            </div>
+            
+            <div class="user-info">
+                <div id="usernameDisplay" class="username-display">Not connected</div>
+            </div>
+
+            <div class="rooms-section">
+                <h3>Rooms</h3>
+                <div id="roomsList" class="rooms-list"></div>
+            </div>
+
+            <div class="commands-section">
+                <h3>Commands</h3>
+                <ul class="commands-list">
+                    <li><code>/nick [name]</code> - Set username</li>
+                    <li><code>/join [room]</code> - Join room</li>
+                    <li><code>/pm [user] [msg]</code> - Private message</li>
+                    <li><code>/rooms</code> - List rooms</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="chat-area">
+            <header class="chat-header">
+                <div class="current-room" id="currentRoom">No room selected</div>
+                <button id="connectBtn" class="connect-btn">Connect</button>
+            </header>
+
+            <div id="messages" class="messages"></div>
+
+            <form id="messageForm" class="message-form">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="Type a message..." 
+                    autocomplete="off"
+                    disabled
+                >
+                <button type="submit" disabled>Send</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

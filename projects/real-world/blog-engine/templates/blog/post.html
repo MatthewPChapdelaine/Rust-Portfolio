@@ -1,0 +1,91 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<article class="post-detail">
+    <header class="post-header">
+        <h1>{{ post.title }}</h1>
+        <div class="post-meta">
+            <span class="date">Published: {{ post.created_at }}</span>
+            {% if post.updated_at != post.created_at %}
+            <span class="date">Updated: {{ post.updated_at }}</span>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post-content">
+        {{ html_content | safe }}
+    </div>
+</article>
+
+<section class="comments-section">
+    <h2>Comments ({{ comments | length }})</h2>
+    
+    <div class="comment-form">
+        <h3>Leave a Comment</h3>
+        <form id="commentForm" onsubmit="submitComment(event, '{{ post.slug }}')">
+            <div class="form-group">
+                <input type="text" id="authorName" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="authorEmail" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea id="commentContent" placeholder="Your Comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Comment</button>
+        </form>
+        <div id="commentMessage"></div>
+    </div>
+
+    <div class="comments-list">
+        {% for comment in comments %}
+        <div class="comment">
+            <div class="comment-header">
+                <strong>{{ comment.author_name }}</strong>
+                <span class="comment-date">{{ comment.created_at }}</span>
+            </div>
+            <p>{{ comment.content }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function submitComment(event, slug) {
+    event.preventDefault();
+    
+    const data = {
+        author_name: document.getElementById('authorName').value,
+        author_email: document.getElementById('authorEmail').value,
+        content: document.getElementById('commentContent').value
+    };
+
+    try {
+        const response = await fetch(`/api/posts/${slug}/comments`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        const messageDiv = document.getElementById('commentMessage');
+        
+        if (response.ok) {
+            messageDiv.className = 'success-message';
+            messageDiv.textContent = result.message;
+            document.getElementById('commentForm').reset();
+        } else {
+            messageDiv.className = 'error-message';
+            messageDiv.textContent = result.error;
+        }
+    } catch (error) {
+        document.getElementById('commentMessage').className = 'error-message';
+        document.getElementById('commentMessage').textContent = 'Failed to submit comment';
+    }
+}
+</script>
+{% endblock %}

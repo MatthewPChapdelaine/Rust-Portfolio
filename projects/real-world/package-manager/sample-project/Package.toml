@@ -1,0 +1,10 @@
+[package]
+name = "my-web-app"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+description = "A sample web application"
+
+[dependencies]
+actix-web = "^4.0"
+serde = "^1.0"
+clap = "^4.0"

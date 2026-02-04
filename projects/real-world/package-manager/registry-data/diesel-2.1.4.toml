@@ -1,0 +1,6 @@
+name = "diesel"
+version = "2.1.4"
+authors = ["Sean Griffin <sean@seantheprogrammer.com>"]
+description = "A safe, extensible ORM and Query Builder"
+
+[dependencies]

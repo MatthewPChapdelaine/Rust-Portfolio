@@ -1,0 +1,8 @@
+name = "axum"
+version = "0.7.3"
+authors = ["Axum Contributors"]
+description = "Web application framework"
+
+[dependencies]
+tokio = "^1.0"
+serde = "^1.0"

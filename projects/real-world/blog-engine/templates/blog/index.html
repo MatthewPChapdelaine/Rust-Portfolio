@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to the Blog</h1>
+    <p>Explore our latest articles and insights</p>
+</div>
+
+<div class="posts-grid">
+    {% for post in posts %}
+    <article class="post-card">
+        <h2><a href="/post/{{ post.slug }}">{{ post.title }}</a></h2>
+        <div class="post-meta">
+            <span class="date">{{ post.created_at }}</span>
+        </div>
+        <p class="summary">{{ post.summary }}</p>
+        <a href="/post/{{ post.slug }}" class="read-more">Read More →</a>
+    </article>
+    {% endfor %}
+</div>
+
+{% if posts | length == 0 %}
+<div class="empty-state">
+    <h2>No posts yet</h2>
+    <p>Check back soon for new content!</p>
+</div>
+{% endif %}
+{% endblock %}

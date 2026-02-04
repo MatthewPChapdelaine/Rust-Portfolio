@@ -1,0 +1,6 @@
+name = "clap"
+version = "4.4.18"
+authors = ["Kevin K. <kbknapp@gmail.com>"]
+description = "A simple to use, efficient, and full-featured Command Line Argument Parser"
+
+[dependencies]
